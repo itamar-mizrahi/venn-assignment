@@ -77,3 +77,7 @@ body {
 .MuiSvgIcon-root {
   color: #f5f5f5;
 }
+
+.search-container{
+  margin: 10px;
+}

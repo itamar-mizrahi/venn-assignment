@@ -13,9 +13,8 @@ import {
   Stack,
   TextField,
 } from "@mui/material";
-import { ThemeProvider } from '@mui/material/styles';
-// Import the dark theme from the example above
-import  darkTheme  from './darkTheme';
+import { ThemeProvider } from "@mui/material/styles";
+import darkTheme from "./darkTheme";
 
 function MoviesSearch() {
   const [movies, setMovies] = useState([]);
@@ -56,57 +55,61 @@ function MoviesSearch() {
 
   return (
     <>
-    <ThemeProvider theme={darkTheme}>
-<Stack className="search-container" direction="row" spacing={2} mb={2}>
-  <TextField
-    className="search-field"
-    label="Search Movies"
-    variant="outlined"
-    size="small"
-    value={searchTerm}
-    onChange={(e) => setSearchTerm(e.target.value)}
-  />
-  <div className="pagination-container">
-    <Pagination count={totalPages} page={page} onChange={(e, value) => setPage(value)} />
-  </div>
-</Stack>
-<TableContainer className="table-container" component={Paper}>
-  <Table>
-    <TableHead>
-      <TableRow>
-        <TableCell>
-          <TableSortLabel
-            className="title-header"
-            active={sort.field === 'Title'}
-            direction={sort.field === 'Title' ? sort.order : 'asc'}
-            onClick={() => handleSort('Title')}
-          >
-            Title
-          </TableSortLabel>
-        </TableCell>
-        <TableCell>
-          <TableSortLabel
-            className="year-header"
-            active={sort.field === 'Year'}
-            direction={sort.field === 'Year' ? sort.order : 'asc'}
-            onClick={() => handleSort('Year')}
-          >
-            Year
-          </TableSortLabel>
-        </TableCell>
-      </TableRow>
-    </TableHead>
-    <TableBody>
-      {sortedMovies.map((movie) => (
-        <TableRow key={movie.imdbID}>
-          <TableCell>{movie.Title}</TableCell>
-          <TableCell>{movie.Year}</TableCell>
-        </TableRow>
-      ))}
-    </TableBody>
-  </Table>
-</TableContainer>
-</ThemeProvider>
+      <ThemeProvider theme={darkTheme}>
+        <Stack className="search-container" direction="row" spacing={2} mb={2}>
+          <TextField
+            className="search-field"
+            label="Search Movies"
+            variant="outlined"
+            size="small"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <div className="pagination-container">
+            <Pagination
+              count={totalPages}
+              page={page}
+              onChange={(e, value) => setPage(value)}
+            />
+          </div>
+        </Stack>
+        <TableContainer className="table-container" component={Paper}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>
+                  <TableSortLabel
+                    className="title-header"
+                    active={sort.field === "Title"}
+                    direction={sort.field === "Title" ? sort.order : "asc"}
+                    onClick={() => handleSort("Title")}
+                  >
+                    Title
+                  </TableSortLabel>
+                </TableCell>
+                <TableCell>
+                  <TableSortLabel
+                    className="year-header"
+                    active={sort.field === "Year"}
+                    direction={sort.field === "Year" ? sort.order : "asc"}
+                    onClick={() => handleSort("Year")}
+                  >
+                    Year
+                  </TableSortLabel>
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {sortedMovies.map((movie) => (
+                <TableRow key={movie.imdbID}>
+                  <TableCell>{movie.Title}</TableCell>
+                  <TableCell>{movie.Year}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </ThemeProvider>
     </>
   );
 }
