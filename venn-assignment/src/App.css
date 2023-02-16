@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+/* app.css */
+body {
+  background-color: #303030;
+  color: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.MuiPaper-root {
+  background-color: #424242;
+  color: #f5f5f5;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.MuiTableSortLabel-root:hover {
+  color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.MuiTableSortLabel-root.MuiTableSortLabel-active {
+  color: #fff;
+}
+
+.MuiTableSortLabel-icon {
+  color: #fff;
+}
+
+.MuiTableCell-head {
+  color: #f5f5f5;
+  font-weight: bold;
+}
+
+.MuiTableBody-root .MuiTableRow-root:nth-of-type(odd) {
+  background-color: #424242;
+}
+
+.MuiPagination-root {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.MuiPaginationItem-root {
+  color: #f5f5f5;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.MuiPaginationItem-root.Mui-selected {
+  background-color: #f5f5f5;
+  color: #424242;
+}
+
+.MuiPaginationItem-root:hover {
+  background-color: #f5f5f5;
+  color: #424242;
+}
+
+.MuiStack-root > * {
+  background-color: #424242;
+  border-radius: 4px;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root {
+  background-color: #424242;
+  color: #f5f5f5;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #f5f5f5;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #f5f5f5;
+}
+
+.MuiTablePagination-root {
+  color: #f5f5f5;
+}
+
+.MuiSvgIcon-root {
+  color: #f5f5f5;
 }
