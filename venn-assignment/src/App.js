@@ -11,7 +11,7 @@ function App() {
       try {
         const response = await fetch(url);
         const json = await response.json();
-        console.log(json);
+        console.log(json.data);
         const listItems = json.data.map((data, key) => (
           <tr
             key={key}
@@ -22,13 +22,13 @@ function App() {
                 type="checkbox"
                 defaultChecked={isChecked(key)}
                 onChange={(e) => {
-                  setCheckbox(e, key, data.ship);
+                  setCheckbox(e, key, data);
                 }}
                 key={key + "name"}
               ></input>{" "}
-              {key + 1} : {data.ship.name}
+              {key + 1} : {data.Title}
             </td>
-            {data.ship.details}
+            {data.Title}
             <td key={key + "callsign"}>{data.Title}</td>
             <td key={key + "country"}>{data.Year}</td>
             <td key={key + "width"}>{data.imdbID}</td>
@@ -45,9 +45,9 @@ function App() {
       <table>
         <tr>
           <th>Name</th>
-          <th>Company</th>
-          <th>Country</th>
-          <th>Contact</th>
+          <th>Title</th>
+          <th>Year</th>
+          <th>ID</th>
         </tr>
         {data}
       </table>
